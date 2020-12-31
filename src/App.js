@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css'
 
+import Header from './components/header/header.component';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -17,6 +19,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>Hello.</h1>
       </div> 
     );
