@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Map(props) {
+function WarsawMap(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -312,4 +312,4 @@ function Map(props) {
   )
 }
 
-export default Map;
+export default WarsawMap;

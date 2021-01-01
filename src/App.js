@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
-import Map from './components/map/map.component';
+import WarsawMap from './components/warsaw-map/warsaw-map.component';
 
 class App extends React.Component {
   constructor() {
@@ -22,7 +22,7 @@ class App extends React.Component {
       <div>
         <Header />
         <h1>Hello.</h1>
-        <Map />
+        <WarsawMap />
       </div> 
     );
   };
