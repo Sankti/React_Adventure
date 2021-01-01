@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
+import Map from './components/map/map.component';
 
 class App extends React.Component {
   constructor() {
@@ -21,6 +22,7 @@ class App extends React.Component {
       <div>
         <Header />
         <h1>Hello.</h1>
+        <Map />
       </div> 
     );
   };
