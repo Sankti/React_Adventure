@@ -22,7 +22,7 @@ class App extends React.Component {
       <div>
         <Header />
         <h1>Hello.</h1>
-        <WarsawMap mapcolor="yellow" />
+        <WarsawMap mapcolor="yellow" fill="green" />
       </div> 
     );
   };

@@ -5,12 +5,12 @@ import './header.styles.scss';
 const Header = ({ currentUser }) => (
     <div className='header'>
         <div className='options'>
-            <a
+            <h2
                 className='option'
                 href=''
             >
-                Character Sheet
-            </a>
+                Agregator
+            </h2>
         </div>
     </div>
 );

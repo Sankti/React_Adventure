@@ -1,13 +1,15 @@
 import * as React from "react";
 
+import './warsaw-map.styles.scss';
+
 function WarsawMap(props) {
   return (
     <div>
       <svg
         className="warsaw-map"
         xmlns="http://www.w3.org/2000/svg"
-        height={1050}
-        width={990}
+        viewBox="0 0 1000 1050"
+        preserveAspectRatio="xMidYMid meet"
         {...props}
       >
         <g fillRule="evenodd">
