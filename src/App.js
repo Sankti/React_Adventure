@@ -14,7 +14,7 @@ class App extends React.Component {
       playerHp: 5,
       playerManaMax: 5,
       playerMana: 5
-    }
+    };
   };
 
   render() {
