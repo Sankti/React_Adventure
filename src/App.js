@@ -21,8 +21,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <h1>Hello.</h1>
-        <WarsawMap mapcolor="yellow" fill="green" />
+        <WarsawMap mapcolor="rgb(219,255,150)" fill="green" />
       </div> 
     );
   };

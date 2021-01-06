@@ -1,9 +1,6 @@
 body {
+  background: rgb(219,255,150);
+  background: radial-gradient(circle, rgba(219,255,150,1) 0%, rgba(148,152,233,1) 100%);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 20px 60px;
-}
-
-a {
-  text-decoration: none;
-  color: antiquewhite;
 }
