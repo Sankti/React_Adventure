@@ -1,8 +1,12 @@
 .warsaw-map {
     width: auto;
     height: 70vh;
-}
 
-.warsaw-map:hover {
-    fill: black;
+    .district {
+        fill: rgb(219,255,150);
+    }
+
+    path:hover {
+        fill: black;
+    }
 }
