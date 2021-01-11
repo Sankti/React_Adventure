@@ -14,6 +14,10 @@ class App extends React.Component {
     };
   };
 
+  districtClick = (event) => {
+    this.setState({chosenDistricts: event.target.id})
+  }
+
   render() {
     return (
       <div>
