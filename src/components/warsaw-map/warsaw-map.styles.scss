@@ -4,10 +4,20 @@
     float: right;
 
     .district {
-        fill: rgb(219,255,150);
+        fill:lightsteelblue;
+        stroke: darkslategray;
+        stroke-width: 2px;
+    }
+
+    .river {
+        fill: deepskyblue
     }
 
     path:hover {
-        fill: black;
+        fill: lightslategray;
+    }
+
+    .pushed {
+        fill: slategray
     }
 }
