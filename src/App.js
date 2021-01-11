@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
+import UserForm from './components/user-form/user-form.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
 
 class App extends React.Component {
@@ -18,7 +19,12 @@ class App extends React.Component {
       <div>
         <Header />
         <div className="content">
-          <p>Wybrane dzielnice: {this.state.chosenDistricts}</p>
+          <div className="user-panel">
+            <p>
+              Wybrane dzielnice: {this.state.chosenDistricts}
+            </p>
+            <UserForm />
+          </div>
           <WarsawMap mapcolor="rgb(219,255,150)" fill="green" />
         </div>
       </div> 

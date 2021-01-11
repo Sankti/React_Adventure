@@ -2,7 +2,7 @@ import React from 'react';
 
 import './header.styles.scss';
 
-const Header = ({ currentUser }) => (
+const Header = () => (
     <div className='header'>
         <div className='options'>
             <h2
