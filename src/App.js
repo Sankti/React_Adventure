@@ -10,7 +10,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      chosenDistricts: "Żaden"
+      chosenDistricts: "brak"
     };
   };
 
@@ -25,11 +25,12 @@ class App extends React.Component {
         <div className="content">
           <div className="user-panel">
             <p>
+              Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
               Wybrane dzielnice: {this.state.chosenDistricts}
             </p>
             <UserForm />
           </div>
-          <WarsawMap mapcolor="rgb(219,255,150)" fill="green" />
+          <WarsawMap pathClick={this.districtClick.bind(this)} />
         </div>
       </div> 
     );
