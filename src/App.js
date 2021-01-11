@@ -9,11 +9,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      playerClass: null,
-      playerHpMax: 5,
-      playerHp: 5,
-      playerManaMax: 5,
-      playerMana: 5
+      chosenDistricts: "Żaden"
     };
   };
 
@@ -21,7 +17,10 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <WarsawMap mapcolor="rgb(219,255,150)" fill="green" />
+        <div className="content">
+          <p>Wybrane dzielnice: {this.state.chosenDistricts}</p>
+          <WarsawMap mapcolor="rgb(219,255,150)" fill="green" />
+        </div>
       </div> 
     );
   };
