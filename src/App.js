@@ -17,7 +17,11 @@ class App extends React.Component {
 
   districtClick = (event) => {
     this.setState({chosenDistricts: this.state.chosenDistricts + event.target.id})
-  }
+  };
+
+  executeClick = () => {
+    window.open("http://sankti.github.io/");
+  };
 
   render() {
     return (
@@ -30,7 +34,7 @@ class App extends React.Component {
               Wybrane dzielnice: {this.state.chosenDistricts}
             </p>
             <UserForm />
-            <ButtonExecute />
+            <ButtonExecute pushFunction={this.executeClick.bind(this)} />
           </div>
           <WarsawMap pathClick={this.districtClick.bind(this)} />
         </div>
