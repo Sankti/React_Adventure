@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/header/header.component';
 import UserForm from './components/user-form/user-form.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
+import ButtonExecute from './components/button-execute/button-execute.component';
 
 class App extends React.Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends React.Component {
               Wybrane dzielnice: {this.state.chosenDistricts}
             </p>
             <UserForm />
+            <ButtonExecute />
           </div>
           <WarsawMap pathClick={this.districtClick.bind(this)} />
         </div>
