@@ -10,12 +10,12 @@ class App extends React.Component {
     super();
 
     this.state = {
-      chosenDistricts: "brak"
+      chosenDistricts: ""
     };
   };
 
   districtClick = (event) => {
-    this.setState({chosenDistricts: event.target.id})
+    this.setState({chosenDistricts: this.state.chosenDistricts + event.target.id})
   }
 
   render() {
