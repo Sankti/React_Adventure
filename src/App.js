@@ -11,7 +11,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      chosenDistricts: []
+      chosenDistricts: ["bie", "bialoleka", "tescik"]
     };
   };
 
@@ -31,7 +31,7 @@ class App extends React.Component {
           <div className="user-panel">
             <p>
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
-              Wybrane dzielnice: {this.state.chosenDistricts.join(",")}
+              Wybrane dzielnice: {this.chosenDistrictsList = this.state.chosenDistricts.join(", ")}
             </p>
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
