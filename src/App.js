@@ -31,7 +31,7 @@ class App extends React.Component {
           <div className="user-panel">
             <p>
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
-              Wybrane dzielnice: {this.state.chosenDistricts}
+              Wybrane dzielnice: {this.state.chosenDistricts.forEach(element => {return toString(element)})}
             </p>
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
