@@ -15,8 +15,8 @@ class App extends React.Component {
     };
   };
 
-  districtClick = (event) => {
-    this.setState({chosenDistricts: this.state.chosenDistricts + event.target.id})
+  addDistrict = (event) => {
+    this.state.chosenDistricts.push(event.target.id);
   };
 
   executeClick = () => {
@@ -31,12 +31,12 @@ class App extends React.Component {
           <div className="user-panel">
             <p>
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
-              Wybrane dzielnice: {this.state.chosenDistricts.forEach(element => {return toString(element)})}
+              Wybrane dzielnice: {this.state.chosenDistricts}
             </p>
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
           </div>
-          <WarsawMap pathClick={this.districtClick.bind(this)} />
+          <WarsawMap pathClick={this.addDistrict.bind(this)} />
         </div>
       </div> 
     );
