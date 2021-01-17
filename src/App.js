@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
+import DisplayArray from './components/display-array/display-array.component';
 import UserForm from './components/user-form/user-form.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
 import ButtonExecute from './components/button-execute/button-execute.component';
@@ -11,7 +12,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      chosenDistricts: ["bie", "bialoleka", "tescik"]
+      chosenDistricts: [],
+      bialoleka: false
     };
   };
 
@@ -33,7 +35,7 @@ class App extends React.Component {
           <div className="user-panel">
             <p>
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
-              Wybrane dzielnice: {this.chosenDistrictsList = this.state.chosenDistricts.join(", ")}
+              Wybrane dzielnice: <DisplayArray array={this.state.chosenDistricts} />
             </p>
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
