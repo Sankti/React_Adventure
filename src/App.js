@@ -12,7 +12,25 @@ class App extends React.Component {
 
     this.state = {
       chosenDistricts: [],
-      bialoleka: true
+      bialoleka: false,
+      bielany: false,
+      bemowo: false,
+      ursus: false,
+      wlochy: false,
+      pragapn: false,
+      srodmiescie: false,
+      targowek: false,
+      zoliborz: false,
+      wola: false,
+      ochota: false,
+      rembertow: false,
+      wesola: false,
+      pragapd: false,
+      wawer: false,
+      mokotow: false,
+      wilanow: false,
+      ursynow: false,
+      vistula: false
     };
   };
 
