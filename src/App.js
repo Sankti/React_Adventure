@@ -18,7 +18,9 @@ class App extends React.Component {
   };
 
   addDistrict = (event) => {
-    this.state.chosenDistricts.push(event.target.id);
+    this.setState(function() {
+      return {chosenDistricts: event.target.id}
+    });
     // Delete this upon resolving the debug:
     console.log(this.state.chosenDistricts.join(", "));
   };
