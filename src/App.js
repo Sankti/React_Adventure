@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
-import DisplayArray from './components/display-array/display-array.component';
 import UserForm from './components/user-form/user-form.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
 import ButtonExecute from './components/button-execute/button-execute.component';
@@ -13,16 +12,19 @@ class App extends React.Component {
 
     this.state = {
       chosenDistricts: [],
-      bialoleka: false
+      bialoleka: true
     };
   };
 
   addDistrict = (event) => {
-    this.setState(function() {
-      return {chosenDistricts: event.target.id}
-    });
+    const district = event.target.id;
+    console.log(district);
+
+    this.setState(
+      {district: !this.state.district}
+    );
     // Delete this upon resolving the debug:
-    console.log(this.state.chosenDistricts.join(", "));
+    console.log(this.state);
   };
 
   executeClick = () => {
@@ -37,7 +39,7 @@ class App extends React.Component {
           <div className="user-panel">
             <p>
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
-              Wybrane dzielnice: <DisplayArray array={this.state.chosenDistricts} />
+              Wybrane dzielnice: {this.state.chosenDistricts.join(", ")}
             </p>
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
