@@ -20,4 +20,8 @@
     .pushed {
         fill: slategray
     }
+
+    text {
+        pointer-events: none;
+    }
 }
