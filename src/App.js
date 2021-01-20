@@ -11,6 +11,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      chosenDistricts: [],
       bialoleka: false,
       bielany: false,
       bemowo: false,
@@ -33,13 +34,33 @@ class App extends React.Component {
     };
   };
 
-  addDistrict = (event) => {
-    const district = event.target.id;
-    console.log(district);
-
+  addDistrict = (district) => {
     this.setState(
-      {district: event.target.id}
+      {chosenDistricts: [...this.state.chosenDistricts, district]}
     );
+  }
+
+  removeDistrict = (district) => {
+    const index = this.state.chosenDistricts.indexOf(district)
+
+    if (index > -1) {
+      this.setState(
+        {chosenDistricts: [this.state.chosenDistricts.splice(
+          index, 1
+          )]}
+      )}
+  }
+
+  districtClick = (event) => {
+    const clickedDistrict = event.target.id;
+    console.log(clickedDistrict);
+    console.log(typeof(clickedDistrict))
+
+    if (this.state.chosenDistricts.includes(clickedDistrict)) {
+      this.removeDistrict(clickedDistrict);
+    } else {
+      this.addDistrict(clickedDistrict);
+    };
     // Delete this upon resolving the debug:
     console.log(this.state);
   };
@@ -61,11 +82,11 @@ class App extends React.Component {
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
           </div>
-          <WarsawMap pathClick={this.addDistrict.bind(this)} />
+          <WarsawMap pathClick={this.districtClick.bind(this)} />
         </div>
-      </div> 
-    );
-  };
-}
+      </div>
+    )
+  }
+};
 
 export default App;
