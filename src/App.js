@@ -11,7 +11,6 @@ class App extends React.Component {
     super();
 
     this.state = {
-      chosenDistricts: [],
       bialoleka: false,
       bielany: false,
       bemowo: false,
