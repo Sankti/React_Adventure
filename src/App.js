@@ -39,7 +39,7 @@ class App extends React.Component {
     console.log(district);
 
     this.setState(
-      {district: !this.state.district}
+      {district: event.target.id}
     );
     // Delete this upon resolving the debug:
     console.log(this.state);
