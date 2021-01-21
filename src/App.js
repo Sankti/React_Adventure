@@ -131,6 +131,7 @@ class App extends React.Component {
 
   executeClick = () => {
     window.open("http://sankti.github.io/");
+    console.log(this.state);
   };
 
   render() {
@@ -146,7 +147,7 @@ class App extends React.Component {
             <UserForm />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} />
           </div>
-          <WarsawMap pathClick={this.districtClick.bind(this)} />
+          <WarsawMap pathClick={this.districtClick.bind(this)} state={this.state} />
         </div>
       </div>
     )

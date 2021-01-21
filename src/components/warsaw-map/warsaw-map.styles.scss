@@ -17,7 +17,9 @@
         fill: lightslategray;
     }
 
-    .pushed {
+    .true {
+        // Used to indicate if the path has been clicked.
+        // Defined by parent state (state.district-name).
         fill: slategray
     }
 
