@@ -9,10 +9,6 @@
         stroke-width: 2px;
     }
 
-    .river {
-        fill: deepskyblue
-    }
-
     path:hover {
         fill: lightslategray;
     }
@@ -21,6 +17,16 @@
         // Used to indicate if the path has been clicked.
         // Defined by parent state (state.district-name).
         fill: slategray
+    }
+
+    .river {
+        fill: deepskyblue;
+    }
+
+    .river.true {
+        // Used to indicate if the path has been clicked.
+        // Defined by parent state (state.district-name).
+        fill: midnightblue
     }
 
     text {

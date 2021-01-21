@@ -155,7 +155,9 @@ function WarsawMap(props) {
       </g>
       <g display="inline" opacity="1" transform="translate(30.77 -317.15)">
         <path
-          className="river"
+          className={"river " + props.state.vistula.toString()}
+          id="vistula"
+          onClick={props.pathClick}
           fillRule="evenodd"
           stroke="none"
           strokeDasharray="none"

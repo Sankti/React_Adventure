@@ -123,8 +123,11 @@ class App extends React.Component {
       case "ursynow":
         this.setState({ursynow: !this.state.ursynow});
         break;
+      case "vistula":
+        this.setState({vistula: !this.state.vistula});
+        break;
       default:
-        console.log("No district selected.")
+        console.log("No district selected.");
     };
     console.log(this.state);
   }
