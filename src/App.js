@@ -75,6 +75,54 @@ class App extends React.Component {
       case "bielany":
         this.setState({bielany: !this.state.bielany});
         break;
+      case "bemowo":
+        this.setState({bemowo: !this.state.bemowo});
+        break;
+      case "ursus":
+        this.setState({ursus: !this.state.ursus});
+        break;
+      case "wlochy":
+        this.setState({wlochy: !this.state.wlochy});
+        break;
+      case "pragapn":
+        this.setState({pragapn: !this.state.pragapn});
+        break;
+      case "srodmiescie":
+        this.setState({srodmiescie: !this.state.srodmiescie});
+        break;
+      case "targowek":
+        this.setState({targowek: !this.state.targowek});
+        break;
+      case "zoliborz":
+        this.setState({zoliborz: !this.state.zoliborz});
+        break;
+      case "wola":
+        this.setState({wola: !this.state.wola});
+        break;
+      case "ochota":
+        this.setState({ochota: !this.state.ochota});
+        break;
+      case "rembertow":
+        this.setState({rembertow: !this.state.rembertow});
+        break;
+      case "wesola":
+        this.setState({wesola: !this.state.wesola});
+        break;
+      case "pragapd":
+        this.setState({pragapd: !this.state.pragapd});
+        break;
+      case "wawer":
+        this.setState({wawer: !this.state.wawer});
+        break;
+      case "mokotow":
+        this.setState({mokotow: !this.state.mokotow});
+        break;
+      case "wilanow":
+        this.setState({wilanow: !this.state.wilanow});
+        break;
+      case "ursynow":
+        this.setState({ursynow: !this.state.ursynow});
+        break;
       default:
         console.log("No district selected.")
     };
