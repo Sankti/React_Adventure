@@ -7,26 +7,31 @@
         fill:lightsteelblue;
         stroke: darkslategray;
         stroke-width: 2px;
+        transition: all 0.4s ease 0s;
     }
 
     path:hover {
         fill: lightslategray;
+        transition: all 0.4s ease 0s;
     }
 
     .true {
         // Used to indicate if the path has been clicked.
         // Defined by parent state (state.district-name).
-        fill: slategray
+        fill: slategray;
+        transition: all 0.4s ease 0s;
     }
 
     .river {
         fill: deepskyblue;
+        transition: all 0.4s ease 0s;
     }
 
     .river.true {
         // Used to indicate if the path has been clicked.
         // Defined by parent state (state.district-name).
-        fill: midnightblue
+        fill: midnightblue;
+        transition: all 0.4s ease 0s;
     }
 
     text {

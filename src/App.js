@@ -148,7 +148,10 @@ class App extends React.Component {
               {/* Wybrane dzielnice: {this.state.chosenDistricts.join(", ")} */}
             </p>
             <UserForm />
-            <ButtonExecute pushFunction={this.executeClick.bind(this)} />
+            <ButtonExecute className="button-check" text="Gumtree" />
+            <br />
+            <ButtonExecute className="button-round" pushFunction={this.executeClick.bind(this)} text="Pokaż wyniki" />
+
           </div>
           <WarsawMap pathClick={this.districtClick.bind(this)} state={this.state} />
         </div>
