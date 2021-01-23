@@ -37,37 +37,6 @@ class App extends React.Component {
     };
   };
 
-  // addDistrict = (district) => {
-  //   this.setState(
-  //     {chosenDistricts: [...this.state.chosenDistricts, district]}
-  //   );
-  // }
-
-  // removeDistrict = (district) => {
-  //   let index = this.state.chosenDistricts.indexOf(district)
-
-  //   if (index > -1) {
-  //     this.setState(
-  //       {chosenDistricts: [this.state.chosenDistricts.splice(
-  //         index, 1
-  //         )]}
-  //     )}
-  // };
-
-  // districtClick = (event) => {
-  //   const clickedDistrict = event.target.id;
-  //   console.log(clickedDistrict);
-  //   console.log(typeof(clickedDistrict))
-
-  //   if (this.state.chosenDistricts.includes(clickedDistrict)) {
-  //     this.removeDistrict(clickedDistrict);
-  //   } else {
-  //     this.addDistrict(clickedDistrict);
-  //   };
-  //   // Delete this upon resolving the debug:
-  //   console.log(this.state);
-  // };
-
   changeStateClick = (event) => {
     let state = event.target.id;
     console.log(state);
