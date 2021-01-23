@@ -1,0 +1,19 @@
+button-check {
+    color: black;
+    background: lightsteelblue;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    border: solid;
+    border-width: 2px;
+    border-color: darkslategray;
+    transition: all 0.4s ease 0s;
+    margin: 10px;
+    pointer-events: none;
+}
+
+button-check:hover {
+    fill: lightslategray;
+    transition: all 0.4s ease 0s;
+    pointer-events: none;
+}
