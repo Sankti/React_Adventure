@@ -161,9 +161,9 @@ class App extends React.Component {
               {/* Wybrane dzielnice: {this.state.chosenDistricts.join(", ")} */}
             </p>
             <UserForm />
-            <ButtonOption id="gumtree" pushFunction={this.changeStateClick.bind(this)} text="Gumtree" state={this.state} />
-            {/* <ButtonOption text="OLX" />
-            <ButtonOption text="Otodom" /> */}
+            <ButtonOption id="gumtree" pushFunction={this.changeStateClick.bind(this)} text="Gumtree" buttonState={this.state.gumtree} />
+            <ButtonOption id="olx" pushFunction={this.changeStateClick.bind(this)} text="OLX" buttonState={this.state.olx} />
+            <ButtonOption id="otodom" pushFunction={this.changeStateClick.bind(this)} text="Otodom" buttonState={this.state.otodom} />
             <br />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} text="Pokaż wyniki" />
 
