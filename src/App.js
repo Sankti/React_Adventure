@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/header/header.component';
 import UserForm from './components/user-form/user-form.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
+import ButtonOption from './components/button-option/button-option.component';
 import ButtonExecute from './components/button-execute/button-execute.component';
 
 class App extends React.Component {
@@ -29,7 +30,10 @@ class App extends React.Component {
       mokotow: false,
       wilanow: false,
       ursynow: false,
-      vistula: false
+      vistula: false,
+      gumtree: false,
+      olx: false,
+      otodom: false
     };
   };
 
@@ -64,11 +68,11 @@ class App extends React.Component {
   //   console.log(this.state);
   // };
 
-  districtClick = (event) => {
-    let district = event.target.id;
-    console.log(district);
+  changeStateClick = (event) => {
+    let state = event.target.id;
+    console.log(state);
 
-    switch(district) {
+    switch(state) {
       case "bialoleka":
         this.setState({bialoleka: !this.state.bialoleka});
         break;
@@ -126,6 +130,15 @@ class App extends React.Component {
       case "vistula":
         this.setState({vistula: !this.state.vistula});
         break;
+      case "gumtree":
+        this.setState({gumtree: !this.state.gumtree});
+        break;
+      case "olx":
+        this.setState({olx: !this.state.olx});
+        break;
+      case "otodom":
+        this.setState({otodom: !this.state.otodom});
+        break;
       default:
         console.log("No district selected.");
     };
@@ -148,12 +161,14 @@ class App extends React.Component {
               {/* Wybrane dzielnice: {this.state.chosenDistricts.join(", ")} */}
             </p>
             <UserForm />
-            <ButtonExecute className="button-check" text="Gumtree" />
+            <ButtonOption id="gumtree" pushFunction={this.changeStateClick.bind(this)} text="Gumtree" state={this.state} />
+            {/* <ButtonOption text="OLX" />
+            <ButtonOption text="Otodom" /> */}
             <br />
-            <ButtonExecute className="button-round" pushFunction={this.executeClick.bind(this)} text="Pokaż wyniki" />
+            <ButtonExecute pushFunction={this.executeClick.bind(this)} text="Pokaż wyniki" />
 
           </div>
-          <WarsawMap pathClick={this.districtClick.bind(this)} state={this.state} />
+          <WarsawMap pathClick={this.changeStateClick.bind(this)} state={this.state} />
         </div>
       </div>
     )
