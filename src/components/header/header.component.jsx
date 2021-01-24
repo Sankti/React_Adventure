@@ -9,7 +9,7 @@ const Header = () => (
                 className='option'
                 href=''
             >
-                Agregator
+                Agregator Ogłoszeń
             </h2>
         </div>
     </div>

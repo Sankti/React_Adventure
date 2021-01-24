@@ -33,9 +33,10 @@ class App extends React.Component {
       vistula: false,
       gumtree: false,
       olx: false,
-      otodom: false,
+      nieruchomosci: false,
       queryGumtree: "https://www.gumtree.pl/s-mieszkania-i-domy-do-wynajecia/warszawa/v1c9008l3200008p1?q=",
-      queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-"
+      queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-",
+      queryNieruchomosci: "https://warszawa.nieruchomosci-online.pl/szukaj.html?3,mieszkanie,wynajem,,Warszawa "
     };
   };
 
@@ -107,8 +108,8 @@ class App extends React.Component {
       case "olx":
         this.setState({olx: !this.state.olx});
         break;
-      case "otodom":
-        this.setState({otodom: !this.state.otodom});
+      case "nieruchomosci":
+        this.setState({nieruchomosci: !this.state.nieruchomosci});
         break;
       default:
         console.log("No district selected.");
@@ -142,6 +143,8 @@ class App extends React.Component {
         return chosenDistricts.join("+");
       } else if (website.includes("olx")) {
         return chosenDistricts.join("-");
+      } else if (website.includes("nieruchomosci")) {
+        return chosenDistricts.join(" ");
       };
     };
 
@@ -158,6 +161,11 @@ class App extends React.Component {
         this.setState({queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-"});
         this.setState({queryOlx: this.state.queryOlx.concat(newQuery)});
         break;
+      case "nieruchomosci":
+        newQuery = this.getDistricts("nieruchomosci");
+        this.setState({queryNieruchomosci: "https://warszawa.nieruchomosci-online.pl/szukaj.html?3,mieszkanie,wynajem,,Warszawa "});
+        this.setState({queryNieruchomosci: this.state.queryNieruchomosci.concat(newQuery)});
+        break;
       default:
         console.log("No website selected.");
     };
@@ -166,21 +174,21 @@ class App extends React.Component {
   executeClick = () => {
     if (this.state.gumtree) {
       this.changeWebsiteQuery("gumtree");
-      this.componentDidUpdate(prevProps, prevState) {
-        if (prevState.queryGumtree !== this.state.queryGumtree) {
-          console.log("Gumtree query has been updated.")
-        }
-      }
-      window.open(this.state.queryGumtree);
+      setTimeout(() => {
+        window.open(this.state.queryGumtree)
+      }, 100);
     };
     if (this.state.olx) {
       this.changeWebsiteQuery("olx");
-      this.componentDidUpdate(prevProps, prevState) {
-        if (prevState.queryOlx !== this.state.queryOlx) {
-          console.log("OLX query has been updated.")
-        }
-      }
-      window.open(this.state.queryOlx);
+      setTimeout(() => {
+        window.open(this.state.queryOlx)
+      }, 100);
+    };
+    if (this.state.nieruchomosci) {
+      this.changeWebsiteQuery("nieruchomosci");
+      setTimeout(() => {
+        window.open(this.state.queryNieruchomosci)
+      }, 100);
     };
     console.log(this.state);
   };
@@ -198,7 +206,7 @@ class App extends React.Component {
             <UserForm />
             <ButtonOption id="gumtree" pushFunction={this.changeStateClick.bind(this)} text="Gumtree" buttonState={this.state.gumtree} />
             <ButtonOption id="olx" pushFunction={this.changeStateClick.bind(this)} text="OLX" buttonState={this.state.olx} />
-            <ButtonOption id="otodom" pushFunction={this.changeStateClick.bind(this)} text="Otodom" buttonState={this.state.otodom} />
+            <ButtonOption id="nieruchomosci" pushFunction={this.changeStateClick.bind(this)} text="Nieruchomości-Online" buttonState={this.state.nieruchomosci} />
             <br />
             <ButtonExecute pushFunction={this.executeClick.bind(this)} text="Pokaż wyniki" />
 
