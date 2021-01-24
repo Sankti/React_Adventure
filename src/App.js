@@ -33,7 +33,10 @@ class App extends React.Component {
       vistula: false,
       gumtree: false,
       olx: false,
-      otodom: false
+      otodom: false,
+      websiteQueries: {
+        gumtree: "https://www.gumtree.pl/s-mieszkania-i-domy-do-wynajecia/warszawa/v1c9008l3200008p1?q="
+      }
     };
   };
 
@@ -112,12 +115,18 @@ class App extends React.Component {
         console.log("No district selected.");
     };
     console.log(this.state);
-  }
+  };
 
   executeClick = () => {
     window.open("http://sankti.github.io/");
     console.log(this.state);
   };
+
+  // changeWebsiteQueries = () => {
+  //   if (this.state.gumtree = true) {
+  //     newGumtreeQuery = this.state.websiteQueries.gumtree +
+  //   }
+  // };
 
   render() {
     return (
