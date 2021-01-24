@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 
 import Header from './components/header/header.component';
-import UserForm from './components/user-form/user-form.component';
+import SearchBox from './components/search-box/search-box.component';
 import WarsawMap from './components/warsaw-map/warsaw-map.component';
 import ButtonOption from './components/button-option/button-option.component';
 import ButtonExecute from './components/button-execute/button-execute.component';
@@ -12,6 +12,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      searchField: "",
       bialoleka: false,
       bielany: false,
       bemowo: false,
@@ -38,6 +39,10 @@ class App extends React.Component {
       queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-",
       queryNieruchomosci: "https://warszawa.nieruchomosci-online.pl/szukaj.html?3,mieszkanie,wynajem,,Warszawa "
     };
+  };
+
+  changeSearchField = (event) => {
+    this.setState({ searchField: event.target.value });
   };
 
   changeStateClick = (event) => {
@@ -138,6 +143,7 @@ class App extends React.Component {
       if (this.state.wilanow) {chosenDistricts.push("Wilanów");};
       if (this.state.ursynow) {chosenDistricts.push("Ursynów");};
       if (this.state.vistula) {chosenDistricts.push("Wisła");};
+      chosenDistricts.push(this.state.searchField);
       
       if (website.includes("gumtree")) {
         return chosenDistricts.join("+");
@@ -203,7 +209,10 @@ class App extends React.Component {
               Kliknij na dzielnice, dla których chcesz zobaczyć ogłoszenia.<br />
               {/* Wybrane dzielnice: {this.state.chosenDistricts.join(", ")} */}
             </p>
-            <UserForm />
+            <p>
+              Dodatkowe tagi: <SearchBox placeholder="Wpisz swoje tagi" handleChange={this.changeSearchField} /><br />
+              Wybierz, jakie wyszukiwarki uwzględnić w zapytaniu:<br />
+            </p>
             <ButtonOption id="gumtree" pushFunction={this.changeStateClick.bind(this)} text="Gumtree" buttonState={this.state.gumtree} />
             <ButtonOption id="olx" pushFunction={this.changeStateClick.bind(this)} text="OLX" buttonState={this.state.olx} />
             <ButtonOption id="nieruchomosci" pushFunction={this.changeStateClick.bind(this)} text="Nieruchomości-Online" buttonState={this.state.nieruchomosci} />
