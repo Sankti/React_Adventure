@@ -118,39 +118,38 @@ class App extends React.Component {
 
   getDistricts = (website) => {
     let chosenDistricts = [];
-      if (this.state.bialoleka = true) {chosenDistricts.push("Białołęka");};
-      if (this.state.bielany = true) {chosenDistricts.push("Bielany");};
-      if (this.state.bemowo = true) {chosenDistricts.push("Bemowo");};
-      if (this.state.bielany = true) {chosenDistricts.push("Ursus");};
-      if (this.state.wlochy = true) {chosenDistricts.push("Włochy");};
-      if (this.state.pragapn = true) {chosenDistricts.push("Praga", "Północ");};
-      if (this.state.srodmiescie = true) {chosenDistricts.push("Śródmieście");};
-      if (this.state.targowek = true) {chosenDistricts.push("Targówek");};
-      if (this.state.zoliborz = true) {chosenDistricts.push("Żoliborz");};
-      if (this.state.wola = true) {chosenDistricts.push("Wola");};
-      if (this.state.ochota = true) {chosenDistricts.push("Ochota");};
-      if (this.state.rembertów = true) {chosenDistricts.push("Rembertów");};
-      if (this.state.wesola = true) {chosenDistricts.push("Wesoła");};
-      if (this.state.pragapd = true) {chosenDistricts.push("Praga", "Południe");};
-      if (this.state.wawer = true) {chosenDistricts.push("Wawer");};
-      if (this.state.mokotow = true) {chosenDistricts.push("Mokotów");};
-      if (this.state.wilanow = true) {chosenDistricts.push("Wilanów");};
-      if (this.state.ursynow = true) {chosenDistricts.push("Ursynów");};
-      if (this.state.vistula = true) {chosenDistricts.push("Wisła");};
+      if (this.state.bialoleka) {chosenDistricts.push("Białołęka");};
+      if (this.state.bielany) {chosenDistricts.push("Bielany");};
+      if (this.state.bemowo) {chosenDistricts.push("Bemowo");};
+      if (this.state.bielany) {chosenDistricts.push("Ursus");};
+      if (this.state.wlochy) {chosenDistricts.push("Włochy");};
+      if (this.state.pragapn) {chosenDistricts.push("Praga", "Północ");};
+      if (this.state.srodmiescie) {chosenDistricts.push("Śródmieście");};
+      if (this.state.targowek) {chosenDistricts.push("Targówek");};
+      if (this.state.zoliborz) {chosenDistricts.push("Żoliborz");};
+      if (this.state.wola) {chosenDistricts.push("Wola");};
+      if (this.state.ochota) {chosenDistricts.push("Ochota");};
+      if (this.state.rembertów) {chosenDistricts.push("Rembertów");};
+      if (this.state.wesola) {chosenDistricts.push("Wesoła");};
+      if (this.state.pragapd) {chosenDistricts.push("Praga", "Południe");};
+      if (this.state.wawer) {chosenDistricts.push("Wawer");};
+      if (this.state.mokotow) {chosenDistricts.push("Mokotów");};
+      if (this.state.wilanow) {chosenDistricts.push("Wilanów");};
+      if (this.state.ursynow) {chosenDistricts.push("Ursynów");};
+      if (this.state.vistula) {chosenDistricts.push("Wisła");};
       
-      if (website = "gumtree") {
+      if (website in "gumtree") {
         return chosenDistricts.join("+");
-      } else if (website = "olx") {
+      } else if (website in "olx") {
         return chosenDistricts.join("-");
       };
     };
 
   changeWebsiteQuery = (website) => {
-    let newQuery = ""
-
+    let newQuery = "";
     switch(website) {
       case "gumtree":
-        let newQuery = this.getDistricts("gumtree");
+        newQuery = this.getDistricts("gumtree");
         this.setState({queryGumtree: newQuery});
         break;
       case "olx":
@@ -163,8 +162,8 @@ class App extends React.Component {
   };
 
   executeClick = () => {
-    if (this.state.gumtree = true) {this.changeWebsiteQuery("gumtree")};
-    if (this.state.olx = true) {this.changeWebsiteQuery("olx")};
+    if (this.state.gumtree) {this.changeWebsiteQuery("gumtree")};
+    if (this.state.olx) {this.changeWebsiteQuery("olx")};
     console.log(this.state);
   };
   
