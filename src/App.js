@@ -138,9 +138,9 @@ class App extends React.Component {
       if (this.state.ursynow) {chosenDistricts.push("Ursynów");};
       if (this.state.vistula) {chosenDistricts.push("Wisła");};
       
-      if (website in "gumtree") {
+      if (website.includes("gumtree")) {
         return chosenDistricts.join("+");
-      } else if (website in "olx") {
+      } else if (website.includes("olx")) {
         return chosenDistricts.join("-");
       };
     };
@@ -150,11 +150,13 @@ class App extends React.Component {
     switch(website) {
       case "gumtree":
         newQuery = this.getDistricts("gumtree");
-        this.setState({queryGumtree: newQuery});
+        this.setState({queryGumtree: "https://www.gumtree.pl/s-mieszkania-i-domy-do-wynajecia/warszawa/v1c9008l3200008p1?q="});
+        this.setState({queryGumtree: this.state.queryGumtree.concat(newQuery)});
         break;
       case "olx":
         newQuery = this.getDistricts("olx");
-        this.setState({queryGumtree: newQuery});
+        this.setState({queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-"});
+        this.setState({queryOlx: this.state.queryOlx.concat(newQuery)});
         break;
       default:
         console.log("No website selected.");
@@ -162,8 +164,24 @@ class App extends React.Component {
   };
 
   executeClick = () => {
-    if (this.state.gumtree) {this.changeWebsiteQuery("gumtree")};
-    if (this.state.olx) {this.changeWebsiteQuery("olx")};
+    if (this.state.gumtree) {
+      this.changeWebsiteQuery("gumtree");
+      this.componentDidUpdate(prevProps, prevState) {
+        if (prevState.queryGumtree !== this.state.queryGumtree) {
+          console.log("Gumtree query has been updated.")
+        }
+      }
+      window.open(this.state.queryGumtree);
+    };
+    if (this.state.olx) {
+      this.changeWebsiteQuery("olx");
+      this.componentDidUpdate(prevProps, prevState) {
+        if (prevState.queryOlx !== this.state.queryOlx) {
+          console.log("OLX query has been updated.")
+        }
+      }
+      window.open(this.state.queryOlx);
+    };
     console.log(this.state);
   };
   
