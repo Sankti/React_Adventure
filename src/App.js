@@ -34,9 +34,8 @@ class App extends React.Component {
       gumtree: false,
       olx: false,
       otodom: false,
-      websiteQueries: {
-        gumtree: "https://www.gumtree.pl/s-mieszkania-i-domy-do-wynajecia/warszawa/v1c9008l3200008p1?q="
-      }
+      queryGumtree: "https://www.gumtree.pl/s-mieszkania-i-domy-do-wynajecia/warszawa/v1c9008l3200008p1?q=",
+      queryOlx: "https://www.olx.pl/nieruchomosci/mieszkania/wynajem/warszawa/q-"
     };
   };
 
@@ -116,6 +115,23 @@ class App extends React.Component {
     };
     console.log(this.state);
   };
+
+  changeWebsiteQueryClick = (event) => {
+    let website = event.target.id;
+
+    
+  }
+
+  changeWebsiteQuery = (website) => {
+    switch(website) {
+      case queryGumtree:
+
+        this.setState({queryGumtree: "TEST"});
+        break;
+      default:
+        console.log("No website selected.");
+    }
+  }
 
   executeClick = () => {
     window.open("http://sankti.github.io/");
