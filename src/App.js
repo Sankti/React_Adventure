@@ -116,34 +116,55 @@ class App extends React.Component {
     console.log(this.state);
   };
 
-  changeWebsiteQueryClick = (event) => {
-    let website = event.target.id;
+  getDistricts = (website) => {
+    let chosenDistricts = [];
+      if (this.state.bialoleka = true) {chosenDistricts.push("Białołęka");};
+      if (this.state.bielany = true) {chosenDistricts.push("Bielany");};
+      if (this.state.bemowo = true) {chosenDistricts.push("Bemowo");};
+      if (this.state.bielany = true) {chosenDistricts.push("Ursus");};
+      if (this.state.wlochy = true) {chosenDistricts.push("Włochy");};
+      if (this.state.pragapn = true) {chosenDistricts.push("Praga", "Północ");};
+      if (this.state.srodmiescie = true) {chosenDistricts.push("Śródmieście");};
+      if (this.state.targowek = true) {chosenDistricts.push("Targówek");};
+      if (this.state.zoliborz = true) {chosenDistricts.push("Żoliborz");};
+      if (this.state.wola = true) {chosenDistricts.push("Wola");};
+      if (this.state.ochota = true) {chosenDistricts.push("Ochota");};
+      if (this.state.rembertów = true) {chosenDistricts.push("Rembertów");};
+      if (this.state.wesola = true) {chosenDistricts.push("Wesoła");};
+      if (this.state.pragapd = true) {chosenDistricts.push("Praga", "Południe");};
+      if (this.state.wawer = true) {chosenDistricts.push("Wawer");};
+      if (this.state.mokotow = true) {chosenDistricts.push("Mokotów");};
+      if (this.state.wilanow = true) {chosenDistricts.push("Wilanów");};
+      if (this.state.ursynow = true) {chosenDistricts.push("Ursynów");};
+      if (this.state.vistula = true) {chosenDistricts.push("Wisła");};
+      
+      if (website = "gumtree") {
+        return chosenDistricts.join("+");
+      } else if (website = "olx") {
+        return chosenDistricts.join("-");
+      };
+    };
 
-    
-  }
+  // changeWebsiteQueryClick = (event) => {
+  //   let website = event.target.id;
+  // }
 
   changeWebsiteQuery = (website) => {
     switch(website) {
-      case queryGumtree:
+      case "gumtree":
 
         this.setState({queryGumtree: "TEST"});
         break;
       default:
         console.log("No website selected.");
-    }
-  }
+    };
+  };
 
   executeClick = () => {
     window.open("http://sankti.github.io/");
     console.log(this.state);
   };
-
-  // changeWebsiteQueries = () => {
-  //   if (this.state.gumtree = true) {
-  //     newGumtreeQuery = this.state.websiteQueries.gumtree +
-  //   }
-  // };
-
+  
   render() {
     return (
       <div>
