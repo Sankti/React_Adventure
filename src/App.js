@@ -145,15 +145,17 @@ class App extends React.Component {
       };
     };
 
-  // changeWebsiteQueryClick = (event) => {
-  //   let website = event.target.id;
-  // }
-
   changeWebsiteQuery = (website) => {
+    let newQuery = ""
+
     switch(website) {
       case "gumtree":
-
-        this.setState({queryGumtree: "TEST"});
+        let newQuery = this.getDistricts("gumtree");
+        this.setState({queryGumtree: newQuery});
+        break;
+      case "olx":
+        newQuery = this.getDistricts("olx");
+        this.setState({queryGumtree: newQuery});
         break;
       default:
         console.log("No website selected.");
@@ -161,7 +163,8 @@ class App extends React.Component {
   };
 
   executeClick = () => {
-    window.open("http://sankti.github.io/");
+    if (this.state.gumtree = true) {this.changeWebsiteQuery("gumtree")};
+    if (this.state.olx = true) {this.changeWebsiteQuery("olx")};
     console.log(this.state);
   };
   
