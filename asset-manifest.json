@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/React_Flat_Rental_Search/static/css/main.ee0eefdb.chunk.css",
+    "main.js": "/React_Flat_Rental_Search/static/js/main.f5e955ca.chunk.js",
+    "main.js.map": "/React_Flat_Rental_Search/static/js/main.f5e955ca.chunk.js.map",
+    "runtime-main.js": "/React_Flat_Rental_Search/static/js/runtime-main.daf3a967.js",
+    "runtime-main.js.map": "/React_Flat_Rental_Search/static/js/runtime-main.daf3a967.js.map",
+    "static/js/2.2d90a43e.chunk.js": "/React_Flat_Rental_Search/static/js/2.2d90a43e.chunk.js",
+    "static/js/2.2d90a43e.chunk.js.map": "/React_Flat_Rental_Search/static/js/2.2d90a43e.chunk.js.map",
+    "static/js/3.67e12a3c.chunk.js": "/React_Flat_Rental_Search/static/js/3.67e12a3c.chunk.js",
+    "static/js/3.67e12a3c.chunk.js.map": "/React_Flat_Rental_Search/static/js/3.67e12a3c.chunk.js.map",
+    "index.html": "/React_Flat_Rental_Search/index.html",
+    "static/css/main.ee0eefdb.chunk.css.map": "/React_Flat_Rental_Search/static/css/main.ee0eefdb.chunk.css.map",
+    "static/js/2.2d90a43e.chunk.js.LICENSE.txt": "/React_Flat_Rental_Search/static/js/2.2d90a43e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.daf3a967.js",
+    "static/js/2.2d90a43e.chunk.js",
+    "static/css/main.ee0eefdb.chunk.css",
+    "static/js/main.f5e955ca.chunk.js"
+  ]
+}
